@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: -4698160195334039042}
   m_Layer: 0
   m_Name: NetworkPlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -228,6 +228,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnpointManager
   ShowTopMostFoldoutHeaderGroup: 1
+  PlayerCountText: {fileID: 0}
+  playerPrefab: {fileID: 697254834722752852}
+  player: []
 --- !u!114 &-4698160195334039042
 MonoBehaviour:
   m_ObjectHideFlags: 0

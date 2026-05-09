@@ -1,13 +1,18 @@
 using UnityEngine;
 using Unity.Netcode;
+using TMPro;
+using System.Collections;
+using System.Collections.Generic;
 using System;
 
 //creates a network aware spawn manager script
 public class SpawnpointManager : NetworkBehaviour
-
 {
+
     //stores which spawn point should be used next
     private static int nextSpawnIndex;
+
+
 
     public override void OnNetworkSpawn()
     {
