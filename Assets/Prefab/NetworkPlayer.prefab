@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: 5540982608840996608}
   - component: {fileID: -2031726849296716654}
   - component: {fileID: -4698160195334039042}
+  - component: {fileID: 6593683875677339480}
+  - component: {fileID: -3413468465028499882}
   m_Layer: 0
   m_Name: NetworkPlayer
   m_TagString: Player
@@ -228,9 +230,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnpointManager
   ShowTopMostFoldoutHeaderGroup: 1
-  PlayerCountText: {fileID: 0}
-  playerPrefab: {fileID: 697254834722752852}
-  player: []
 --- !u!114 &-4698160195334039042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,3 +246,35 @@ MonoBehaviour:
   moveSpeed: 5
   gravity: -9.8
   groundedGravity: -2
+--- !u!114 &6593683875677339480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697254834722752852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72fe91e931a942a428cfcd04baf120f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalPlayerCameraTarget
+  ShowTopMostFoldoutHeaderGroup: 1
+--- !u!114 &-3413468465028499882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697254834722752852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2afd3aa9d484f78489e5cd721a0e5656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerColorManager
+  ShowTopMostFoldoutHeaderGroup: 1
+  playerRenderer: {fileID: 8496565147541038118}
+  playerMaterials:
+  - {fileID: 2100000, guid: df74ec2d22659bf44a1469034048a0eb, type: 2}
+  - {fileID: 2100000, guid: 0c3a765ee43359b4ab123a01a1a55ac7, type: 2}
+  - {fileID: 2100000, guid: ebc1240180c8de948aa86a0aee460948, type: 2}
+  - {fileID: 2100000, guid: eae47102c1200e4469104c1cff217f4d, type: 2}
