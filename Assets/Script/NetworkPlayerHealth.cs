@@ -3,7 +3,8 @@ using Unity.Netcode;
 
 public class NetworkPlayerHealth : NetworkBehaviour
 {
-
+    [SerializeField] private GameObject damagePopupPrefab;
+    [SerializeField] private Transform popupSpawnPoint;
     [SerializeField] private int MaxHealth = 100;
     //this line creates network-synced health variable
     public NetworkVariable<int> CurrentHealth = new NetworkVariable<int>(
@@ -36,11 +37,29 @@ public class NetworkPlayerHealth : NetworkBehaviour
     public void TakeDamage(int damageAmount)
     {
         if(!IsServer) { return;}
+        SpawnDamagePopupClientRpc(damageAmount);
         CurrentHealth.Value -= damageAmount;
         CurrentHealth.Value = Mathf.Clamp(CurrentHealth.Value, 0, MaxHealth);
         if (CurrentHealth.Value <= 0)
         {
             Respawn();//use a start coroutine if you want to set respawn timer delay so hindi sobra sudden respawn
+        }
+    }
+
+    [ClientRpc]
+    private void SpawnDamagePopupClientRpc(int damage)
+    {
+        GameObject popup = Instantiate(
+            damagePopupPrefab,
+            popupSpawnPoint.position,
+            Quaternion.identity
+        );
+
+        DamagePopup popupScript = popup.GetComponent<DamagePopup>();
+
+        if (popupScript != null)
+        {
+            popupScript.Setup(damage);
         }
     }
 
